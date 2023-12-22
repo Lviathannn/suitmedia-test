@@ -3,6 +3,9 @@ const nextConfig = {};
 
 // next.config.js
 module.exports = {
+  images: {
+    domains: ["suitmedia.static-assets.id", "suitmedia-backend.suitdev.com"],
+  },
   async rewrites() {
     return [
       {

@@ -2,23 +2,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+import navLogo from "@/public/nav-logo.png";
+import { AlignLeft } from "lucide-react";
+import { useEffect, useState } from "react";
+import MobileNavbar from "./MobileNavbar";
 type Props = {};
 
 export default function Navbar({}: Props) {
+  const [isOpen, setisOpen] = useState<boolean>(false);
   const pathname = usePathname();
+  useEffect(() => {
+    setisOpen(false);
+  }, [pathname]);
   return (
-    <nav className="fixed top-0 bg-primary px-container w-full flex justify-between items-center py-3">
+    <nav className="fixed top-0 bg-primary px-container w-full flex justify-between items-center py-3 z-50">
       <Link href="/" className="">
-        <Image
-          src="/nav-logo.png"
-          alt="Logo"
-          width={120}
-          height={120}
-          className="object-contain"
-        />
+        <Image src={navLogo} alt="Logo" className="object-contain w-28" />
       </Link>
-      <ul className="flex gap-5 text-white">
+      <ul className="md:flex gap-5 text-white hidden">
         <Link
           href="/work"
           className={`flex items-center ${
@@ -80,6 +81,23 @@ export default function Navbar({}: Props) {
           Contact
         </Link>
       </ul>
+      <div className="md:hidden">
+        <button
+          className="text-white"
+          onClick={() => {
+            setisOpen(true);
+          }}
+        >
+          <AlignLeft />
+        </button>
+        {isOpen && (
+          <MobileNavbar
+            isOpen={isOpen}
+            setOpen={setisOpen}
+            pathname={pathname}
+          />
+        )}
+      </div>
     </nav>
   );
 }
