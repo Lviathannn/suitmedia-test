@@ -20,7 +20,12 @@ export default async function CardList({ page, limit, sort }: Props) {
         "page[number]": Number(page) || 1,
         "page[size]": Number(limit) || 10,
         "append[]": ["small_image", "medium_image"],
-        sort: sort == "newest" ? "-published_at" : "published_at",
+        sort:
+          sort == "newest"
+            ? "-published_at"
+            : sort === "oldest"
+            ? "published_at"
+            : "-published_at",
       },
     }
   );
