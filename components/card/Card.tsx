@@ -6,11 +6,11 @@ type Props = {
   date: string;
 };
 
-export default function Card({ image, title, date }: Props) {
+export default async function Card({ image, title, date }: Props) {
   return (
     <div className="flex flex-col shadow-md rounded-xl w-full overflow-hidden">
       <div className="relative w-full aspect-video">
-        <Image src={image} alt={title} fill />
+        <Image src={image} alt={title} fill sizes="100vh" loading="lazy" />
       </div>
       <div className="px-3 py-5">
         <p className="text-gray-500 font-medium">

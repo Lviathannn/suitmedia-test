@@ -24,3 +24,9 @@ export interface CardType {
   small_image: SmallImage[];
   medium_image: MediumImage[];
 }
+
+export interface searchParamsType {
+  page?: string;
+  limit?: string;
+  sort?: string;
+}
