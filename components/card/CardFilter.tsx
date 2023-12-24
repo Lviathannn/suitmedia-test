@@ -9,7 +9,7 @@ export default function CardFilter({ sort, limit }: Props) {
   return (
     <div className="w-full flex justify-between items-start flex-col md:flex-row md:items-center gap-5">
       <p>Showing 1 - {limit || 10} of 100</p>
-      <div className="flex gap-10">
+      <div className="flex gap-5 sm:gap-10 flex-col sm:flex-row">
         <SelectFilter
           title="limit"
           label="Show Per Page :"

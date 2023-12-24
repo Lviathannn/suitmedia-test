@@ -3,7 +3,7 @@ import notFound from "@/public/notfound.png";
 import Link from "next/link";
 type Props = {};
 
-export default function page({}: Props) {
+export default function notfound({}: Props) {
   return (
     <main className="min-h-[90vh] w-full flex justify-center items-center">
       <div className="gap-5 flex-col flex justify-center items-center">
