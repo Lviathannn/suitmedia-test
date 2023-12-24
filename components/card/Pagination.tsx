@@ -1,5 +1,5 @@
 "use client";
-import { updateSearchParams } from "@/lib/updateSearchParams";
+import { updateSearchParams } from "@/utils/updateSearchParams";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,

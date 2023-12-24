@@ -1,5 +1,5 @@
 "use client";
-import { updateSearchParams } from "@/lib/updateSearchParams";
+import { updateSearchParams } from "@/utils/updateSearchParams";
 import { ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";

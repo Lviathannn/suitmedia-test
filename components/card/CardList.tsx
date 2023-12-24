@@ -1,7 +1,7 @@
 import { CardType } from "@/types";
 import dynamic from "next/dynamic";
 import CardSkeleton from "./CardSkeleton";
-import { getData } from "@/lib/getData";
+import { getData } from "@/utils/getData";
 const Card = dynamic(() => import("./Card"), {
   loading: CardSkeleton,
 });
